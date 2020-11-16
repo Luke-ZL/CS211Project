@@ -19,10 +19,14 @@ function animate() {
 }
 animate();
 
-
+var changeCoord = function() {
+    camera.position.x = document.getElementById("xVal").value;
+    camera.position.y = document.getElementById("yVal").value;
+    camera.position.z = document.getElementById("zVal").value;
+}
 
 var socket = io();
 socket.on("update", function(msg) {
     cube.position.x = parseFloat(msg);
-    console.log(msg);
+    //console.log(msg);
 });
